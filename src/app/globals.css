@@ -111,3 +111,8 @@
     }
   }
 }
+
+/* Preview banner hidden once dismissed (attribute set before first paint) */
+html[data-preview-dismissed] .preview-banner {
+  display: none;
+}

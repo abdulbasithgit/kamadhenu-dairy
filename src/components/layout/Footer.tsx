@@ -32,12 +32,6 @@ function FooterHeading({ children }: { children: string }) {
   );
 }
 
-/** Cached so the static shell can be prerendered (Cache Components). */
-async function CurrentYear() {
-  "use cache";
-  return <>{new Date().getFullYear()}</>;
-}
-
 export function Footer() {
   const { address, contact } = site;
   const socials = Object.entries(site.social) as [SocialPlatform, string][];
@@ -168,7 +162,7 @@ export function Footer() {
         <KolamDivider className="pt-4 text-gold/70" />
         <Container className="flex flex-col items-center justify-between gap-2 pb-6 text-xs text-cream/70 sm:flex-row">
           <p>
-            © <CurrentYear /> {site.name}. All rights reserved.
+            © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
           <p>Made with care in Chettinad, Tamil Nadu.</p>
         </Container>

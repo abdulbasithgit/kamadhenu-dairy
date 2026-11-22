@@ -7,7 +7,9 @@ Next.js (App Router) + TypeScript + Tailwind CSS v4.
 ```bash
 npm install
 npm run dev        # http://localhost:3000
-npm run build      # production build
+npm run build      # static export into /out (served from "/")
+npm run build:pages  # static export with the GitHub Pages base path /kamadhenu-dairy
+npm run serve      # serve /out locally (after npm run build)
 npm run lint       # ESLint
 npm run format     # Prettier
 ```
@@ -49,4 +51,32 @@ To add a photo: put it in `public/images/` and set its `src`/`image` in the data
 Sample stats, reviews, certificates and delivery areas show a dashed "Sample / placeholder"
 label on the site until you mark them real.
 
-(Full deploy steps for Vercel are added in Phase 6.)
+## Preview deployment (GitHub Pages)
+
+Every push to `main` builds the site and deploys it with
+`.github/workflows/deploy.yml` to:
+
+**https://abdulbasithgit.github.io/kamadhenu-dairy/**
+
+One-time setup on GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+
+How it works:
+
+- `next.config.ts` uses `output: "export"` (plain static files in `/out`).
+- On Pages the site lives under `/kamadhenu-dairy`, set via the `NEXT_PUBLIC_BASE_PATH`
+  env variable (only in the workflow and `npm run build:pages`; empty for `npm run dev`).
+- `next/link` adds the base path automatically. **`next/image` does not** – always write
+  `src={withBasePath("/images/…")}` (from `src/lib/basePath.ts`).
+- Dynamic routes (e.g. `products/[slug]`) must export `generateStaticParams()`.
+
+### Preview mode (switch off at launch)
+
+`previewMode` in `src/data/site.ts` controls, in one place:
+
+- `<meta name="robots" content="noindex, nofollow">` on every page
+- `robots.txt` → `Disallow: /`
+- the dismissible "Preview version – for review only" banner
+
+Set it to `false` for the real launch.
+
+(Full deploy steps for the real launch are added in Phase 6.)

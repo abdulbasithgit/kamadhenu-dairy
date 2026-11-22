@@ -13,6 +13,15 @@ export interface DeliveryArea {
 }
 
 export const site = {
+  /**
+   * REVIEW / PREVIEW MODE – set to false at the real launch.
+   * While true:
+   *  - every page gets <meta name="robots" content="noindex, nofollow">
+   *  - robots.txt disallows everything
+   *  - a dismissible "Preview version – for review only" banner is shown
+   */
+  previewMode: true,
+
   name: "Sri Chettinadu Kamadhenu Dairy Farm",
   shortName: "Kamadhenu Dairy",
   tagline: "Purity • Tradition • Quality",

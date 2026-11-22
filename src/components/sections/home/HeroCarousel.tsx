@@ -16,6 +16,7 @@ import { Placeholder } from "@/components/ui/Placeholder";
 import { freeSample, heroSlides } from "@/data/home";
 import { site } from "@/data/site";
 import { cn } from "@/lib/cn";
+import { withBasePath } from "@/lib/basePath";
 import { usePrefersReducedMotion } from "@/lib/usePrefersReducedMotion";
 import { whatsappLink } from "@/lib/whatsapp";
 
@@ -107,7 +108,7 @@ export function HeroCarousel() {
                 <ArchFrame className="mx-auto aspect-[4/5] w-full max-w-[17rem] bg-cream-50 sm:max-w-xs md:max-w-sm">
                   {slide.image ? (
                     <Image
-                      src={slide.image.src}
+                      src={withBasePath(slide.image.src)}
                       alt={slide.image.alt}
                       fill
                       preload={i === 0}

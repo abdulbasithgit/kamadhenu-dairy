@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Mulish, Noto_Sans_Tamil, Playfair_Display } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { PreviewBanner } from "@/components/layout/PreviewBanner";
 import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
 import { site } from "@/data/site";
 import "./globals.css";
@@ -33,6 +34,8 @@ export const metadata: Metadata = {
     template: `%s | ${site.shortName}`,
   },
   description: site.description,
+  // Keep search engines out while this is a review/preview build
+  robots: site.previewMode ? { index: false, follow: false } : undefined,
 };
 
 export const viewport: Viewport = {
@@ -43,6 +46,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
+      // the preview-banner script may add data-preview-dismissed before hydration
+      suppressHydrationWarning
       className={`${playfair.variable} ${mulish.variable} ${notoTamil.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col font-sans">
@@ -52,6 +57,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Skip to content
         </a>
+        <PreviewBanner />
         <Header />
         <main id="main" className="flex-1">
           {children}

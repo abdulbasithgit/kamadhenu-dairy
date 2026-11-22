@@ -5,11 +5,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
     "lint": "eslint",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build:pages": "NEXT_PUBLIC_BASE_PATH=/kamadhenu-dairy next build",
+    "serve": "npx --yes serve@14 out"
   },
   "dependencies": {
     "framer-motion": "^14.14.0",

@@ -8,6 +8,7 @@ import { buttonClasses } from "@/components/ui/Button";
 import { Placeholder } from "@/components/ui/Placeholder";
 import type { Product } from "@/data/products";
 import { cn } from "@/lib/cn";
+import { withBasePath } from "@/lib/basePath";
 import { whatsappLink } from "@/lib/whatsapp";
 
 function formatPrice(price: number | null) {
@@ -29,7 +30,7 @@ export function ProductCard({ product }: { product: Product }) {
       >
         {product.image ? (
           <Image
-            src={product.image.src}
+            src={withBasePath(product.image.src)}
             alt={product.image.alt}
             fill
             sizes="(min-width: 1024px) 280px, (min-width: 640px) 45vw, 92vw"

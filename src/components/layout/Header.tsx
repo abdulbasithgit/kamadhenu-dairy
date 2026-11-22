@@ -77,7 +77,7 @@ export function Header() {
                       href={item.href}
                       aria-current={active ? "page" : undefined}
                       className={cn(
-                        "relative block rounded-md px-3 py-2 text-[0.95rem] font-semibold text-navy transition-colors hover:text-gold-700",
+                        "relative block rounded-md px-3 py-2 text-[0.95rem] font-semibold whitespace-nowrap text-navy transition-colors hover:text-gold-700",
                         "after:absolute after:inset-x-3 after:-bottom-0.5 after:h-0.5 after:origin-center after:scale-x-0 after:bg-gold after:transition-transform",
                         active ? "after:scale-x-100" : "hover:after:scale-x-100",
                       )}

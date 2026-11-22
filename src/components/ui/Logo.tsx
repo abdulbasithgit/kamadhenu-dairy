@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/data/site";
 import { cn } from "@/lib/cn";
+import { withBasePath } from "@/lib/basePath";
 
 /** Round logo + optional wordmark. */
 export function Logo({
@@ -25,7 +26,7 @@ export function Logo({
       aria-label={`${site.name} – home`}
     >
       <Image
-        src="/images/logo.png"
+        src={withBasePath("/images/logo-small.png")}
         alt=""
         width={size}
         height={size}

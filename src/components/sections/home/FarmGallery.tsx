@@ -8,6 +8,7 @@ import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { gallery, type GalleryItem } from "@/data/home";
 import { cn } from "@/lib/cn";
+import { withBasePath } from "@/lib/basePath";
 
 const shapeClass: Record<GalleryItem["shape"], string> = {
   tall: "aspect-[3/4]",
@@ -17,7 +18,13 @@ const shapeClass: Record<GalleryItem["shape"], string> = {
 
 function Photo({ item, sizes }: { item: GalleryItem; sizes: string }) {
   return item.src ? (
-    <Image src={item.src} alt={item.alt} fill sizes={sizes} className="object-cover" />
+    <Image
+      src={withBasePath(item.src)}
+      alt={item.alt}
+      fill
+      sizes={sizes}
+      className="object-cover"
+    />
   ) : (
     <Placeholder label={item.placeholderLabel} className="border-0" />
   );
