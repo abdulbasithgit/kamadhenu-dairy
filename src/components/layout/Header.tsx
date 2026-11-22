@@ -64,7 +64,7 @@ export function Header() {
         <div aria-hidden="true" className="h-1 border-b border-gold/60 bg-navy" />
 
         <Container className="flex h-18 items-center justify-between gap-4 lg:h-20">
-          <Logo preload size={52} className="min-w-0" />
+          <Logo preload singleLineName size={52} className="min-w-0" />
 
           {/* Desktop navigation */}
           <nav aria-label="Main" className="hidden xl:block">
@@ -77,7 +77,7 @@ export function Header() {
                       href={item.href}
                       aria-current={active ? "page" : undefined}
                       className={cn(
-                        "relative rounded-md px-3 py-2 text-[0.95rem] font-semibold text-navy transition-colors hover:text-gold-700",
+                        "relative block rounded-md px-3 py-2 text-[0.95rem] font-semibold text-navy transition-colors hover:text-gold-700",
                         "after:absolute after:inset-x-3 after:-bottom-0.5 after:h-0.5 after:origin-center after:scale-x-0 after:bg-gold after:transition-transform",
                         active ? "after:scale-x-100" : "hover:after:scale-x-100",
                       )}

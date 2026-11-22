@@ -60,6 +60,9 @@ export const site = {
     youtube: "https://www.youtube.com/",
   } satisfies Partial<Record<SocialPlatform, string>>,
 
+  // TODO: set to true once the areas below are confirmed (hides the "examples" notice)
+  deliveryAreasConfirmed: false,
+
   // TODO: confirm every area and pincode you actually deliver to.
   // These are examples from the Chettinad region only.
   deliveryAreas: [

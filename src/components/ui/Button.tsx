@@ -6,7 +6,7 @@ type Variant = "primary" | "outline" | "gold" | "whatsapp" | "ghost";
 type Size = "sm" | "md" | "lg";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-lg font-semibold tracking-wide transition-colors duration-200 disabled:pointer-events-none disabled:opacity-60";
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-semibold tracking-wide transition-colors duration-200 disabled:pointer-events-none disabled:opacity-60";
 
 const variants: Record<Variant, string> = {
   primary: "bg-navy text-white shadow-softer hover:bg-navy-900",

@@ -7,11 +7,14 @@ import { cn } from "@/lib/cn";
 export function Logo({
   size = 52,
   showText = true,
+  singleLineName = false,
   className,
   preload = false,
 }: {
   size?: number;
   showText?: boolean;
+  /** keep "Sri Chettinadu Kamadhenu" on one line from xl up (header only) */
+  singleLineName?: boolean;
   className?: string;
   preload?: boolean;
 }) {
@@ -32,7 +35,12 @@ export function Logo({
       />
       {showText && (
         <span className="flex flex-col leading-tight">
-          <span className="font-display text-[0.95rem] font-semibold text-navy sm:text-lg xl:whitespace-nowrap">
+          <span
+            className={cn(
+              "font-display text-[0.95rem] font-semibold text-navy sm:text-lg",
+              singleLineName && "xl:whitespace-nowrap",
+            )}
+          >
             Sri Chettinadu Kamadhenu
           </span>
           <span className="text-[0.65rem] font-bold tracking-[0.22em] text-gold-700 uppercase sm:text-xs">
