@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InlineScript } from "@/components/InlineScript";
 import { LOCALE_STORAGE_KEY, defaultLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionary";
 import { basePath } from "@/lib/basePath";
@@ -15,7 +16,7 @@ export default function RootRedirectPage() {
 
   return (
     <>
-      <script dangerouslySetInnerHTML={{ __html: script }} />
+      <InlineScript code={script} />
       <noscript>
         <meta httpEquiv="refresh" content={`0;url=${basePath}/en/`} />
       </noscript>

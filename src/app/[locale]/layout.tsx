@@ -52,6 +52,8 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       data-theme={site.colorTheme}
+      // lets Next.js turn off smooth scrolling during route changes
+      data-scroll-behavior="smooth"
       // the preview-banner script may add data-preview-dismissed before hydration
       suppressHydrationWarning
       className={`${fontVariables} h-full antialiased`}

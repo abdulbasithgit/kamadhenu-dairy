@@ -125,6 +125,7 @@ export function HeroCarousel() {
                       alt={copy.imageAlt}
                       fill
                       preload={i === 0}
+                      loading={i === 0 ? "eager" : "lazy"}
                       sizes="(min-width: 768px) 384px, 320px"
                       className="object-cover"
                       style={{ objectPosition: slide.image.position ?? "center" }}

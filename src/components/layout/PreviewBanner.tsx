@@ -1,4 +1,5 @@
 import { CloseIcon } from "@/components/icons";
+import { InlineScript } from "@/components/InlineScript";
 import { site } from "@/data/site";
 import { getI18n } from "@/i18n/server";
 import { DismissPreviewButton } from "./DismissPreviewButton";
@@ -17,10 +18,8 @@ export async function PreviewBanner() {
   const { t } = await getI18n();
   return (
     <>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `try{if(localStorage.getItem("${PREVIEW_DISMISS_KEY}"))document.documentElement.setAttribute("data-preview-dismissed","")}catch(e){}`,
-        }}
+      <InlineScript
+        code={`try{if(localStorage.getItem("${PREVIEW_DISMISS_KEY}"))document.documentElement.setAttribute("data-preview-dismissed","")}catch(e){}`}
       />
       <div
         role="region"
