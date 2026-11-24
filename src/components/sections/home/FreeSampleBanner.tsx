@@ -1,14 +1,19 @@
 import { GiftIcon, WhatsAppIcon } from "@/components/icons";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { freeSample } from "@/data/home";
-import { whatsappLink } from "@/lib/whatsapp";
+import { localizedHref } from "@/i18n/config";
+import { getI18n } from "@/i18n/server";
+import { whatsappHref } from "@/lib/contact";
 
-export function FreeSampleBanner() {
+export async function FreeSampleBanner() {
+  const { locale, t } = await getI18n();
   return (
-    <section aria-labelledby="sample-title" className="bg-cream py-16 sm:py-20">
+    <section
+      aria-labelledby="sample-title"
+      className="bg-cream py-16 sm:py-20 rich:bg-sage-50"
+    >
       <Container>
-        <div className="relative overflow-hidden rounded-lg bg-navy p-1.5 shadow-soft">
+        <div className="relative overflow-hidden rounded-lg bg-navy p-1.5 shadow-soft rich:bg-forest-800">
           <div className="relative rounded-md border border-gold/70 px-6 py-10 text-center sm:px-12 sm:py-14">
             <div
               aria-hidden="true"
@@ -19,32 +24,32 @@ export function FreeSampleBanner() {
             </span>
             <h2
               id="sample-title"
-              className="relative mx-auto max-w-2xl text-3xl font-semibold text-cream sm:text-4xl"
+              className="relative mx-auto max-w-2xl text-3xl font-semibold text-cream sm:text-4xl ta:text-[1.6rem] ta:sm:text-3xl"
             >
-              {freeSample.title}
+              {t.sample.title}
             </h2>
-            <p className="relative mx-auto mt-4 max-w-xl text-lg leading-relaxed text-cream/85">
-              {freeSample.text}
+            <p className="relative mx-auto mt-4 max-w-xl text-lg leading-relaxed text-cream/85 ta:text-base">
+              {t.sample.text}
             </p>
-            <div className="relative mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <div className="relative mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
               <ButtonLink
-                href={whatsappLink(freeSample.whatsappMessage)}
+                href={whatsappHref(t.whatsapp.freeSample)}
                 external
                 variant="gold"
                 size="lg"
               >
                 <WhatsAppIcon size={20} />
-                Request a free sample
+                {t.sample.request}
               </ButtonLink>
               <ButtonLink
-                href="/subscribe"
+                href={localizedHref(locale, "/subscribe")}
                 size="lg"
                 className="border border-cream/60 bg-transparent hover:bg-cream hover:text-navy"
               >
-                See subscription plans
+                {t.sample.plans}
               </ButtonLink>
             </div>
-            <p className="relative mt-5 text-sm text-cream/70">{freeSample.terms}</p>
+            <p className="relative mt-5 text-sm text-cream/70">{t.sample.terms}</p>
           </div>
         </div>
       </Container>

@@ -15,6 +15,11 @@ const nextConfig: NextConfig = {
   basePath,
   assetPrefix: basePath,
 
+  // One 404 page for URLs outside /en and /ta (there are several root layouts)
+  experimental: {
+    globalNotFound: true,
+  },
+
   // Note: cacheComponents / partialPrefetching are NOT used – Partial
   // Prerendering can't run in static export mode.
   turbopack: {

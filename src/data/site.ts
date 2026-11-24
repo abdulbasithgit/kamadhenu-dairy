@@ -1,87 +1,189 @@
 /**
- * Business details – edit this file to change contact info everywhere on the site.
+ * SITE CONSTANTS – the ONLY place for business details.
+ * Change a value here and it updates everywhere on the site.
  *
- * Anything marked TODO is a placeholder. Please replace it with real, verified
- * details before going live. Nothing here has been invented as fact.
+ * Rules:
+ *  - Leave a field EMPTY ("" / null / []) until you have the real value.
+ *    Empty fields are hidden on the site automatically (never shown as "TODO").
+ *  - Nothing here has been invented as fact. Lines marked TODO need your input.
+ *  - Visible wording (headings, buttons, sentences) lives in
+ *    src/i18n/messages/en.json and ta.json, not here.
  */
 
 export type SocialPlatform = "instagram" | "facebook" | "youtube";
+export type ColorTheme = "light-green" | "rich-green";
+export type DayCode = "mon" | "tue" | "wed" | "thu" | "fri" | "sat" | "sun";
+
+export interface OpeningHours {
+  days: DayCode[];
+  /** 24-hour "HH:MM", e.g. "09:00" */
+  opens: string;
+  /** 24-hour "HH:MM", e.g. "18:00" */
+  closes: string;
+}
 
 export interface DeliveryArea {
-  name: string;
+  id: string;
+  /** Place names are shown in the visitor's language */
+  name: { en: string; ta: string };
   pincodes: string[];
 }
 
-export const site = {
+export interface SiteConfig {
+  /** Review build: noindex meta, robots.txt Disallow, "Preview version" banner. Set false at launch. */
+  previewMode: boolean;
   /**
-   * REVIEW / PREVIEW MODE – set to false at the real launch.
-   * While true:
-   *  - every page gets <meta name="robots" content="noindex, nofollow">
-   *  - robots.txt disallows everything
-   *  - a dismissible "Preview version – for review only" banner is shown
+   * Colour option for the client to compare:
+   *  "light-green" (A) – cream + soft sage sections, forest green footer
+   *  "rich-green"  (B) – forest green hero / stats / footer, sage elsewhere
    */
+  colorTheme: ColorTheme;
+
+  /** Brand name – kept in English in both languages */
+  name: string;
+  shortName: string;
+  /** Live site address, no trailing slash. Used for SEO / Open Graph. */
+  url: string;
+
+  ownerName: string;
+  foundedYear: number | null;
+
+  contact: {
+    /** As you want it displayed, e.g. "+91 98765 43210" */
+    phone: string;
+    /** International format, digits only, no + or spaces, e.g. "919876543210" */
+    whatsapp: string;
+    email: string;
+  };
+
+  address: {
+    line1: string;
+    line2: string;
+    district: string;
+    state: string;
+    postalCode: string;
+    country: string;
+  };
+
+  maps: {
+    /** Google Maps share link (Share → Copy link) */
+    url: string;
+    /** Google Maps embed URL (Share → Embed a map → the src="…" value) */
+    embedUrl: string;
+  };
+
+  hours: {
+    /** Office / phone hours. Empty array = hidden. */
+    business: OpeningHours[];
+    /** Morning delivery window, 24-hour "HH:MM". Empty = hidden. */
+    delivery: { from: string; to: string };
+  };
+
+  payments: {
+    /** e.g. "kamadhenu@okaxis" */
+    upiId: string;
+  };
+
+  legal: {
+    fssaiLicence: string;
+    gstNumber: string;
+  };
+
+  social: Record<SocialPlatform, string>;
+
+  /**
+   * Google Sheet / Apps Script URL that will receive orders (later phase).
+   * Comes from the NEXT_PUBLIC_ORDER_SHEET_URL environment variable, not from this file.
+   */
+  orderSheetEndpoint: string;
+
+  /** Set true once deliveryAreas are confirmed (hides the "example areas" notice) */
+  deliveryAreasConfirmed: boolean;
+  deliveryAreas: DeliveryArea[];
+}
+
+export const site: SiteConfig = {
   previewMode: true,
+  colorTheme: "light-green",
 
   name: "Sri Chettinadu Kamadhenu Dairy Farm",
   shortName: "Kamadhenu Dairy",
-  tagline: "Purity • Tradition • Quality",
-  description:
-    "Fresh A2 milk from native cows, delivered in glass bottles to your doorstep in the Chettinad region of Tamil Nadu.",
-
-  // TODO: replace with your real domain once bought (used for SEO, sitemap, Open Graph)
+  // TODO: your real domain once bought
   url: "https://www.example.com",
 
-  // TODO: founding year – leave null until confirmed (the logo mock-up says 1928; please verify)
-  foundedYear: null as number | null,
+  // TODO
+  ownerName: "",
+  // TODO: only if confirmed (the logo mock-up says 1928 – please verify)
+  foundedYear: null,
 
   contact: {
-    // TODO: real phone number
-    phoneDisplay: "+91 00000 00000",
-    phoneHref: "tel:+910000000000",
-    // TODO: WhatsApp number in international format, digits only (no +, no spaces)
-    whatsapp: "910000000000",
-    // TODO: real email
-    email: "hello@example.com",
+    phone: "", // TODO
+    whatsapp: "", // TODO – digits only, e.g. "919876543210"
+    email: "", // TODO
   },
 
   address: {
-    // TODO: full postal address
-    line1: "TODO: Farm address line 1",
-    line2: "TODO: Village / Town",
-    district: "TODO: District",
+    line1: "", // TODO
+    line2: "", // TODO: village / town
+    district: "", // TODO
     state: "Tamil Nadu",
-    postalCode: "TODO",
+    postalCode: "", // TODO
     country: "IN",
-    // TODO: paste the Google Maps share link for the farm
-    mapsUrl: "https://maps.google.com/",
   },
 
-  // TODO: confirm delivery and office hours
+  maps: {
+    url: "", // TODO
+    embedUrl: "", // TODO
+  },
+
   hours: {
-    delivery: "TODO: e.g. 5:30 am – 7:30 am, every day",
-    office: "TODO: e.g. Mon – Sat, 9 am – 6 pm",
+    // TODO, e.g. [{ days: ["mon", "tue", "wed", "thu", "fri", "sat"], opens: "09:00", closes: "18:00" }]
+    business: [],
+    // TODO, e.g. { from: "05:30", to: "07:30" }
+    delivery: { from: "", to: "" },
   },
 
-  // TODO: replace with your real profile links. Remove a line to hide that icon.
+  payments: {
+    upiId: "", // TODO
+  },
+
+  legal: {
+    fssaiLicence: "", // TODO
+    gstNumber: "", // TODO (only if registered)
+  },
+
+  // TODO: full profile links, e.g. "https://www.instagram.com/yourpage"
   social: {
-    instagram: "https://www.instagram.com/",
-    facebook: "https://www.facebook.com/",
-    youtube: "https://www.youtube.com/",
-  } satisfies Partial<Record<SocialPlatform, string>>,
+    instagram: "",
+    facebook: "",
+    youtube: "",
+  },
 
-  // TODO: set to true once the areas below are confirmed (hides the "examples" notice)
+  orderSheetEndpoint: process.env.NEXT_PUBLIC_ORDER_SHEET_URL ?? "",
+
+  // TODO: confirm areas and pincodes, then set to true
   deliveryAreasConfirmed: false,
-
-  // TODO: confirm every area and pincode you actually deliver to.
-  // These are examples from the Chettinad region only.
+  // Examples from the Chettinad region only – not confirmed
   deliveryAreas: [
-    { name: "Karaikudi", pincodes: ["630001", "630002", "630003"] },
-    { name: "Devakottai", pincodes: ["630302"] },
-    { name: "Kanadukathan", pincodes: ["630103"] },
-    { name: "Pallathur", pincodes: ["630107"] },
-  ] satisfies DeliveryArea[],
-
-  /** Default message used by every "Order on WhatsApp" button */
-  whatsappGreeting:
-    "Hello Sri Chettinadu Kamadhenu Dairy Farm, I would like to know more about your A2 milk.",
-} as const;
+    {
+      id: "karaikudi",
+      name: { en: "Karaikudi", ta: "காரைக்குடி" },
+      pincodes: ["630001", "630002", "630003"],
+    },
+    {
+      id: "devakottai",
+      name: { en: "Devakottai", ta: "தேவகோட்டை" },
+      pincodes: ["630302"],
+    },
+    {
+      id: "kanadukathan",
+      name: { en: "Kanadukathan", ta: "கானாடுகாத்தான்" },
+      pincodes: ["630103"],
+    },
+    {
+      id: "pallathur",
+      name: { en: "Pallathur", ta: "பள்ளத்தூர்" },
+      pincodes: ["630107"],
+    },
+  ],
+};

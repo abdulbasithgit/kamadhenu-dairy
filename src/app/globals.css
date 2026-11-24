@@ -1,18 +1,27 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------
+   Variants
+   - rich:  only when site.colorTheme = "rich-green"  (Option B)
+   - ta:    only on Tamil pages (<html lang="ta">)
+   --------------------------------------------------------------- */
+@custom-variant rich (&:where([data-theme="rich-green"] *));
+@custom-variant ta (&:lang(ta));
+
+/* ---------------------------------------------------------------
    Brand theme tokens (Tailwind v4 – used as bg-navy, text-gold-700…)
+   All text/background pairs used on the site were checked for WCAG AA.
    --------------------------------------------------------------- */
 @theme {
-  /* Primary – headings, buttons */
+  /* Primary – logo, headings, buttons */
   --color-navy: #1f3354;
   --color-navy-900: #14223a;
   --color-navy-700: #2b4570;
   --color-navy-100: #e3e8f0;
 
   /* Accent – borders, icons, ornaments.
-     Note: base gold is decorative only (2.6:1 on cream).
-     Use gold-700 for any gold TEXT (5.4:1 on cream, passes AA). */
+     Base gold is decorative only (2.6:1 on cream).
+     Use gold-700 for any gold TEXT on light backgrounds (≥ 4.9:1). */
   --color-gold: #b8964e;
   --color-gold-700: #7a5f26;
   --color-gold-300: #d7c08f;
@@ -23,14 +32,29 @@
   --color-cream-50: #fcfaf5;
   --color-cream-200: #efe6d2;
 
-  /* Small nature accents only */
+  /* Greens – "organic" section backgrounds.
+     Light: sage-50/100/200 (navy, ink, gold-700 text all pass AA).
+     Dark:  forest-800/900 for strong sections (cream, cream/70, gold-300 text pass AA).
+     forest-700 is for borders/decoration only (small light text falls just below AA). */
+  --color-sage-50: #f1f6ec;
+  --color-sage-100: #e3edda;
+  --color-sage-200: #ccddbd;
+  --color-sage-300: #a9c49a;
+  --color-forest-700: #2e5b3c;
+  --color-forest-800: #22472f;
+  --color-forest-900: #183424;
+
+  /* Leaf: decorative accents. leaf-700 for green TEXT (≥ 5.3:1 on light bgs). */
   --color-leaf: #4e7a3a;
+  --color-leaf-700: #3d6230;
 
   /* Body text */
   --color-ink: #1e1e1e;
   --color-ink-muted: #4a4a4a;
 
-  --color-whatsapp: #128c7e;
+  /* Darker than WhatsApp's own green so white button text passes AA (5.5:1) */
+  --color-whatsapp: #0f766e;
+  --color-whatsapp-dark: #115e59;
 
   --radius-lg: 0.75rem;
 
@@ -49,11 +73,21 @@
    Chettinad details
    --------------------------------------------------------------- */
 
-/* Athangudi-tile inspired background: a quiet repeating tile of
-   quarter circles and a four-petal centre, drawn in faint gold. */
+/* Athangudi-tile inspired background: quarter circles + a four-petal centre.
+   Three versions: cream with gold lines, sage with green lines, forest with gold lines. */
 @utility bg-athangudi {
   background-color: var(--color-cream);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='%23B8964E' stroke-opacity='0.16' stroke-width='1'%3E%3Cpath d='M0 18A18 18 0 0 0 18 0M54 0a18 18 0 0 0 18 18M72 54a18 18 0 0 0-18 18M18 72A18 18 0 0 0 0 54'/%3E%3Cpath d='M36 22c5 6 5 8 0 14-5-6-5-8 0-14zM36 50c-5-6-5-8 0-14 5 6 5 8 0 14zM22 36c6-5 8-5 14 0-6 5-8 5-14 0zM50 36c-6 5-8 5-14 0 6-5 8-5 14 0z'/%3E%3Ccircle cx='36' cy='36' r='2'/%3E%3C/g%3E%3Cg fill='%23B8964E' fill-opacity='0.18'%3E%3Ccircle cx='0' cy='0' r='1.5'/%3E%3Ccircle cx='72' cy='0' r='1.5'/%3E%3Ccircle cx='0' cy='72' r='1.5'/%3E%3Ccircle cx='72' cy='72' r='1.5'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+@utility bg-athangudi-sage {
+  background-color: var(--color-sage-50);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='%234E7A3A' stroke-opacity='0.14' stroke-width='1'%3E%3Cpath d='M0 18A18 18 0 0 0 18 0M54 0a18 18 0 0 0 18 18M72 54a18 18 0 0 0-18 18M18 72A18 18 0 0 0 0 54'/%3E%3Cpath d='M36 22c5 6 5 8 0 14-5-6-5-8 0-14zM36 50c-5-6-5-8 0-14 5 6 5 8 0 14zM22 36c6-5 8-5 14 0-6 5-8 5-14 0zM50 36c-6 5-8 5-14 0 6-5 8-5 14 0z'/%3E%3Ccircle cx='36' cy='36' r='2'/%3E%3C/g%3E%3Cg fill='%23B8964E' fill-opacity='0.22'%3E%3Ccircle cx='0' cy='0' r='1.5'/%3E%3Ccircle cx='72' cy='0' r='1.5'/%3E%3Ccircle cx='0' cy='72' r='1.5'/%3E%3Ccircle cx='72' cy='72' r='1.5'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+@utility bg-athangudi-forest {
+  background-color: var(--color-forest-900);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='%23D7C08F' stroke-opacity='0.12' stroke-width='1'%3E%3Cpath d='M0 18A18 18 0 0 0 18 0M54 0a18 18 0 0 0 18 18M72 54a18 18 0 0 0-18 18M18 72A18 18 0 0 0 0 54'/%3E%3Cpath d='M36 22c5 6 5 8 0 14-5-6-5-8 0-14zM36 50c-5-6-5-8 0-14 5 6 5 8 0 14zM22 36c6-5 8-5 14 0-6 5-8 5-14 0zM50 36c-6 5-8 5-14 0 6-5 8-5 14 0z'/%3E%3Ccircle cx='36' cy='36' r='2'/%3E%3C/g%3E%3Cg fill='%23D7C08F' fill-opacity='0.16'%3E%3Ccircle cx='0' cy='0' r='1.5'/%3E%3Ccircle cx='72' cy='0' r='1.5'/%3E%3Ccircle cx='0' cy='72' r='1.5'/%3E%3Ccircle cx='72' cy='72' r='1.5'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 /* Arch shape for image frames (temple / Chettinad doorway) */
@@ -84,13 +118,6 @@
     text-wrap: balance;
   }
 
-  :lang(ta) h1,
-  :lang(ta) h2,
-  :lang(ta) h3 {
-    font-family: var(--font-tamil);
-    line-height: 1.4;
-  }
-
   /* Visible, brand-coloured keyboard focus everywhere */
   :focus-visible {
     outline: 2px solid var(--color-navy);
@@ -110,6 +137,21 @@
       transition-duration: 0.01ms !important;
     }
   }
+}
+
+/* ---------------------------------------------------------------
+   Tamil typography. Unlayered on purpose so it wins over utilities
+   such as leading-tight / tracking-[0.2em] (letter-spacing breaks
+   Tamil letter shapes; Tamil needs a taller line height).
+   --------------------------------------------------------------- */
+/* `X:lang(ta)` matches only elements whose own language is Tamil, so
+   English brand text marked lang="en" (the logo wordmark) keeps its style. */
+:is(h1, h2, h3, h4):lang(ta) {
+  font-family: var(--font-tamil);
+  line-height: 1.4;
+}
+[class*="tracking-"]:lang(ta) {
+  letter-spacing: normal;
 }
 
 /* Preview banner hidden once dismissed (attribute set before first paint) */

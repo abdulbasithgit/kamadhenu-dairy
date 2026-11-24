@@ -12,7 +12,7 @@ const variants: Record<Variant, string> = {
   primary: "bg-navy text-white shadow-softer hover:bg-navy-900",
   outline: "border border-navy text-navy hover:bg-navy hover:text-white",
   gold: "border border-gold bg-gold-100 text-navy hover:bg-gold hover:text-navy-900",
-  whatsapp: "bg-whatsapp text-white shadow-softer hover:bg-[#0e7266]",
+  whatsapp: "bg-whatsapp text-white shadow-softer hover:bg-whatsapp-dark",
   ghost: "text-navy hover:bg-navy-100",
 };
 

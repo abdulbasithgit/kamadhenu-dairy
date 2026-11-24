@@ -4,15 +4,17 @@ import type { ReactNode } from "react";
 
 export function DismissPreviewButton({
   storageKey,
+  label,
   children,
 }: {
   storageKey: string;
+  label: string;
   children: ReactNode;
 }) {
   return (
     <button
       type="button"
-      aria-label="Dismiss preview notice"
+      aria-label={label}
       onClick={() => {
         try {
           localStorage.setItem(storageKey, "1");

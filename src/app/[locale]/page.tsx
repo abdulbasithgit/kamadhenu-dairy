@@ -26,7 +26,7 @@ export default function HomePage() {
       <Testimonials />
       <Certifications />
       <DeliveryAreas />
-      <KolamDivider />
+      <KolamDivider className="bg-cream rich:bg-sage-50" />
       <FreeSampleBanner />
     </>
   );

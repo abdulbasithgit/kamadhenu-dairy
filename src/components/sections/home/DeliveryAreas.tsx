@@ -3,9 +3,17 @@ import { PlaceholderNotice } from "@/components/ui/PlaceholderNotice";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { site } from "@/data/site";
+import { format, formatTimeRange } from "@/i18n/format";
+import { getI18n } from "@/i18n/server";
 import { PincodeChecker } from "./PincodeChecker";
 
-export function DeliveryAreas() {
+export async function DeliveryAreas() {
+  const { locale, t } = await getI18n();
+  const time = formatTimeRange(locale, site.hours.delivery.from, site.hours.delivery.to);
+  const intro = time
+    ? `${t.delivery.intro} ${format(t.delivery.deliveryTime, { time })}`
+    : t.delivery.intro;
+
   return (
     <Section
       id="delivery"
@@ -16,25 +24,23 @@ export function DeliveryAreas() {
         <SectionHeading
           id="delivery-title"
           align="left"
-          eyebrow="Delivery areas"
-          title="Where we deliver"
-          intro={`Fresh milk reaches these areas every morning. Delivery time: ${site.hours.delivery}`}
+          eyebrow={t.delivery.eyebrow}
+          title={t.delivery.title}
+          intro={intro}
         />
         {!site.deliveryAreasConfirmed && (
-          <PlaceholderNotice className="mx-0 mt-6">
-            Example areas only – delivery areas are not confirmed yet
-          </PlaceholderNotice>
+          <PlaceholderNotice className="mx-0 mt-6">{t.delivery.notice}</PlaceholderNotice>
         )}
         <ul className="mt-8 grid gap-3 sm:grid-cols-2">
           {site.deliveryAreas.map((area) => (
             <li
-              key={area.name}
+              key={area.id}
               className="flex items-start gap-3 rounded-lg border border-gold/40 bg-cream-50 p-4"
             >
-              <MapPinIcon size={20} className="mt-0.5 shrink-0 text-gold-700" />
+              <MapPinIcon size={20} className="mt-0.5 shrink-0 text-leaf-700" />
               <span>
-                <span className="block font-display text-lg font-semibold text-navy">
-                  {area.name}
+                <span className="block font-display text-lg font-semibold text-navy ta:font-tamil ta:text-base">
+                  {area.name[locale]}
                 </span>
                 <span className="text-sm text-ink-muted">{area.pincodes.join(", ")}</span>
               </span>

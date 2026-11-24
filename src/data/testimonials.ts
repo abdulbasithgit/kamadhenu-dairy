@@ -1,44 +1,19 @@
 /**
- * Customer reviews.
+ * Customer reviews. Wording lives in src/i18n/messages/{en,ta}.json → reviews.items.
  *
- * TODO: Every entry below is a PLACEHOLDER. Replace with real reviews
+ * TODO: Every entry is a PLACEHOLDER. Replace the text with real reviews
  * (with the customer's permission), then set placeholder: false.
- * Placeholder entries are shown with a visible "Sample" label.
  */
+import type { Dictionary } from "@/i18n/dictionary";
+
 export interface Testimonial {
-  quote: string;
-  name: string;
-  location: string;
+  id: keyof Dictionary["reviews"]["items"];
   placeholder: boolean;
 }
 
 export const testimonials: Testimonial[] = [
-  {
-    quote:
-      "[Placeholder review] A real customer's words about the taste of the milk will go here.",
-    name: "Customer name – TODO",
-    location: "Area – TODO",
-    placeholder: true,
-  },
-  {
-    quote:
-      "[Placeholder review] A real customer's words about morning delivery will go here.",
-    name: "Customer name – TODO",
-    location: "Area – TODO",
-    placeholder: true,
-  },
-  {
-    quote:
-      "[Placeholder review] A real customer's words about the ghee or curd will go here.",
-    name: "Customer name – TODO",
-    location: "Area – TODO",
-    placeholder: true,
-  },
-  {
-    quote:
-      "[Placeholder review] A real customer's words about the glass bottles will go here.",
-    name: "Customer name – TODO",
-    location: "Area – TODO",
-    placeholder: true,
-  },
+  { id: "r1", placeholder: true },
+  { id: "r2", placeholder: true },
+  { id: "r3", placeholder: true },
+  { id: "r4", placeholder: true },
 ];

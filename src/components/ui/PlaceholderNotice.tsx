@@ -19,7 +19,7 @@ export function PlaceholderNotice({
       className={cn(
         "mx-auto max-w-xl rounded-lg border-2 border-dashed px-4 py-2 text-center text-sm font-semibold",
         onDark
-          ? "border-gold-300 bg-navy-900/60 text-gold-100"
+          ? "border-gold-300 bg-black/15 text-gold-100"
           : "border-gold bg-gold-100 text-gold-700",
         className,
       )}
@@ -29,7 +29,13 @@ export function PlaceholderNotice({
   );
 }
 
-export function SampleBadge({ onDark = false }: { onDark?: boolean }) {
+export function SampleBadge({
+  label,
+  onDark = false,
+}: {
+  label: string;
+  onDark?: boolean;
+}) {
   return (
     <span
       className={cn(
@@ -37,7 +43,7 @@ export function SampleBadge({ onDark = false }: { onDark?: boolean }) {
         onDark ? "border-gold-300 text-gold-100" : "border-gold-700 text-gold-700",
       )}
     >
-      Sample
+      {label}
     </span>
   );
 }

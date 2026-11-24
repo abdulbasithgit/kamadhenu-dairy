@@ -1,6 +1,7 @@
 import { cn } from "@/lib/cn";
+import { LeafAccent } from "./LeafAccent";
 
-/** Eyebrow + serif heading + optional intro, used at the top of each section. */
+/** Eyebrow (with leaf accent) + serif heading + optional intro. */
 export function SectionHeading({
   id,
   eyebrow,
@@ -31,17 +32,19 @@ export function SectionHeading({
       {eyebrow && (
         <p
           className={cn(
-            "mb-2 text-xs font-bold tracking-[0.2em] uppercase",
+            "mb-2 flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase ta:text-sm",
+            align === "center" && "justify-center",
             onDark ? "text-gold-300" : "text-gold-700",
           )}
         >
+          <LeafAccent className={onDark ? "text-sage-300" : undefined} />
           {eyebrow}
         </p>
       )}
       <Tag
         id={id}
         className={cn(
-          "text-3xl leading-tight font-semibold sm:text-4xl",
+          "text-3xl leading-tight font-semibold sm:text-4xl ta:text-[1.6rem] ta:sm:text-3xl",
           onDark && "text-cream",
         )}
       >

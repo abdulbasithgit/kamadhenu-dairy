@@ -1,21 +1,35 @@
-/**
- * Main navigation. `key` will be used for Tamil translations in Phase 5.
- */
+import type { Dictionary } from "@/i18n/dictionary";
+
+/** Menu items. Labels come from the translation files (nav.<key>). */
 export interface NavItem {
-  key: string;
-  label: string;
+  key: keyof Dictionary["nav"];
+  /** Path without locale; the locale prefix is added automatically */
   href: string;
 }
 
 export const mainNav: NavItem[] = [
-  { key: "home", label: "Home", href: "/" },
-  { key: "about", label: "About", href: "/about" },
-  { key: "products", label: "Products", href: "/products" },
-  { key: "farm", label: "Our Farm", href: "/our-farm" },
-  { key: "subscribe", label: "Subscribe", href: "/subscribe" },
-  { key: "recipes", label: "Recipes", href: "/recipes" },
-  { key: "contact", label: "Contact", href: "/contact" },
+  { key: "home", href: "/" },
+  { key: "about", href: "/about" },
+  { key: "products", href: "/products" },
+  { key: "farm", href: "/our-farm" },
+  { key: "subscribe", href: "/subscribe" },
+  { key: "recipes", href: "/recipes" },
+  { key: "contact", href: "/contact" },
 ];
 
 /** Extra links shown only in the footer */
-export const footerExtraNav: NavItem[] = [{ key: "faq", label: "FAQ", href: "/faq" }];
+export const footerExtraNav: NavItem[] = [{ key: "faq", href: "/faq" }];
+
+/**
+ * Pages that don't exist yet. Each gets a translated "Coming soon" page.
+ * Remove an entry when its real page is built (e.g. "products" in Phase 3).
+ */
+export const comingSoonPages: { slug: string; key: keyof Dictionary["nav"] }[] = [
+  { slug: "about", key: "about" },
+  { slug: "products", key: "products" },
+  { slug: "our-farm", key: "farm" },
+  { slug: "subscribe", key: "subscribe" },
+  { slug: "recipes", key: "recipes" },
+  { slug: "contact", key: "contact" },
+  { slug: "faq", key: "faq" },
+];

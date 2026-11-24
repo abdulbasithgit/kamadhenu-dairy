@@ -1,0 +1,371 @@
+{
+  "meta": {
+    "title": "Sri Chettinadu Kamadhenu Dairy Farm | Fresh A2 Milk in Chettinad",
+    "description": "Fresh A2 milk from native cows, delivered in glass bottles to your doorstep in the Chettinad region of Tamil Nadu."
+  },
+  "brand": {
+    "line1": "Sri Chettinadu Kamadhenu",
+    "line2": "Dairy Farm",
+    "homeLink": "{name} – home"
+  },
+  "common": {
+    "tagline": "Purity • Tradition • Quality",
+    "orderOnWhatsApp": "Order on WhatsApp",
+    "subscribeNow": "Subscribe Now",
+    "tryFreeSample": "Try a Free Sample",
+    "skipToContent": "Skip to content",
+    "sample": "Sample",
+    "priceOnRequest": "Price on request",
+    "enquire": "Enquire",
+    "enquireLabel": "Enquire about {product} {size} on WhatsApp (opens in a new tab)",
+    "size": "Size",
+    "new": "New"
+  },
+  "units": {
+    "ml": "ml",
+    "l": "litre",
+    "g": "g"
+  },
+  "days": {
+    "mon": "Mon",
+    "tue": "Tue",
+    "wed": "Wed",
+    "thu": "Thu",
+    "fri": "Fri",
+    "sat": "Sat",
+    "sun": "Sun"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "products": "Products",
+    "farm": "Our Farm",
+    "subscribe": "Subscribe",
+    "recipes": "Recipes",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "mainLabel": "Main",
+    "mobileLabel": "Mobile",
+    "menu": "Menu",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "language": {
+    "switchTo": "தமிழ்",
+    "switchLabel": "தமிழில் பார்க்க – View this page in Tamil"
+  },
+  "preview": {
+    "banner": "Preview version – for review only",
+    "region": "Preview notice",
+    "dismiss": "Dismiss preview notice"
+  },
+  "whatsapp": {
+    "greeting": "Hello Sri Chettinadu Kamadhenu Dairy Farm, I would like to know more about your A2 milk.",
+    "freeSample": "Hello Sri Chettinadu Kamadhenu Dairy Farm, I would like to try a free sample of your A2 milk. My area / pincode is: ",
+    "enquire": "Hello, I would like to enquire about {product} ({size}).",
+    "pincode": "Hello, do you deliver to pincode {pincode}? Please let me know when you do.",
+    "float": "Chat with us",
+    "floatLabel": "Chat with us on WhatsApp (opens in a new tab)"
+  },
+  "footer": {
+    "quickLinks": "Quick links",
+    "getInTouch": "Get in touch",
+    "weDeliverTo": "We deliver to",
+    "notListed": "Not on the list? Message us – we are growing our routes.",
+    "chatOnWhatsApp": "Chat on WhatsApp",
+    "delivery": "Delivery: {time}",
+    "viewOnMap": "View on Google Maps",
+    "social": "Social media",
+    "socialLabel": "{platform} (opens in a new tab)",
+    "fssai": "FSSAI Lic. No. {number}",
+    "gst": "GSTIN {number}",
+    "rights": "© {year} {name}. All rights reserved.",
+    "madeWith": "Made with care in Chettinad, Tamil Nadu."
+  },
+  "hero": {
+    "label": "Highlights",
+    "previous": "Previous slide",
+    "next": "Next slide",
+    "choose": "Choose slide",
+    "goTo": "Slide {n}: {name}",
+    "slideOf": "{n} of {total}",
+    "pause": "Pause slideshow",
+    "play": "Play slideshow",
+    "slides": {
+      "milk": {
+        "eyebrow": "Premium A2 Milk",
+        "headline": "Pure A2 milk from our native cows to your doorstep",
+        "subtext": "Fresh every morning, in clean glass bottles – the way milk tasted when we were children.",
+        "imageAlt": "Sri Chettinadu Kamadhenu Premium A2 Milk in glass bottles and a carton",
+        "placeholder": "Milk bottles photo – replace"
+      },
+      "cows": {
+        "eyebrow": "Our cows",
+        "headline": "Cared for like family, the Chettinad way",
+        "subtext": "Our cows graze in the open, eat green fodder and are milked gently. Happy cows give honest milk.",
+        "imageAlt": "Cows grazing at the farm",
+        "placeholder": "Cows grazing at the farm – replace"
+      },
+      "delivery": {
+        "eyebrow": "Morning delivery",
+        "headline": "At your door before your first filter coffee",
+        "subtext": "Choose daily, alternate-day or weekly delivery. Pause any time when you travel.",
+        "imageAlt": "Morning doorstep delivery",
+        "placeholder": "Morning doorstep delivery photo – replace"
+      }
+    }
+  },
+  "intro": {
+    "eyebrow": "Our story",
+    "title": "A small farm with a simple promise",
+    "paragraphs": [
+      "In the heart of Chettinad, we look after our cows the way families here always have – with patience, clean water, green fodder and plenty of open space.",
+      "We started Kamadhenu Dairy because we wanted our own children to drink milk we could trust. Today we share that same milk with families around us: nothing added, nothing taken away."
+    ],
+    "readStory": "Read our story",
+    "imagePlaceholder": "Family / farm founders photo – replace",
+    "imageAlt": "Our family at the farm"
+  },
+  "promise": {
+    "eyebrow": "Why A2 milk",
+    "title": "Our promise to your family",
+    "intro": "Good milk doesn't need clever marketing. It needs healthy cows, clean hands and a short trip to your door.",
+    "items": {
+      "nativeBreed": {
+        "title": "Native breed cows",
+        "text": "Our milk comes from native Indian cows, which naturally give A2 milk."
+      },
+      "noPreservatives": {
+        "title": "No preservatives",
+        "text": "No preservatives, no thickeners, no added water. Just milk."
+      },
+      "fresh": {
+        "title": "Farm-fresh within hours",
+        "text": "Milked early in the morning, chilled, and on its way to you within hours."
+      },
+      "glass": {
+        "title": "Glass bottle delivery",
+        "text": "Clean, reusable glass bottles keep milk tasting fresh and cut down on plastic."
+      }
+    }
+  },
+  "ethos": {
+    "eyebrow": "Our ethos",
+    "items": {
+      "purity": {
+        "title": "Purity",
+        "text": "What leaves our farm is exactly what our cows give – tested, chilled and sealed with care."
+      },
+      "tradition": {
+        "title": "Tradition",
+        "text": "Old Chettinad ways of caring for cattle, setting curd and making ghee, kept alive every day."
+      },
+      "quality": {
+        "title": "Quality",
+        "text": "Clean sheds, healthy cows and hygienic handling at every step from udder to doorstep."
+      }
+    }
+  },
+  "products": {
+    "eyebrow": "From our farm",
+    "title": "Fresh from Kamadhenu",
+    "intro": "Everything is made from our own cows' milk, in small batches.",
+    "viewAll": "View all products",
+    "items": {
+      "a2-milk": {
+        "name": "Premium A2 Milk",
+        "description": "Whole milk from our native cows, chilled soon after milking and delivered in glass bottles.",
+        "imageAlt": "Premium A2 Milk in a glass bottle and a carton",
+        "placeholder": "A2 milk bottle photo – replace"
+      },
+      "thick-curd": {
+        "name": "Thick Curd",
+        "description": "Set the old way from our own milk – mild, creamy and good with every meal.",
+        "imageAlt": "Thick curd in a clay pot",
+        "placeholder": "Curd pot photo – replace"
+      },
+      "cow-ghee": {
+        "name": "Pure Cow Ghee",
+        "description": "Golden ghee made from the cream of our cows' milk, with a rich, nutty aroma.",
+        "imageAlt": "Golden cow ghee in a glass jar",
+        "placeholder": "Ghee jar photo – replace"
+      },
+      "white-butter": {
+        "name": "Fresh White Butter",
+        "description": "Soft, unsalted white butter, churned in small batches.",
+        "imageAlt": "Fresh white butter",
+        "placeholder": "White butter photo – replace"
+      },
+      "paneer": {
+        "name": "Soft Paneer",
+        "description": "Fresh, soft paneer for curries, tikkas and snacks.",
+        "imageAlt": "Soft paneer cubes",
+        "placeholder": "Paneer photo – replace"
+      },
+      "spiced-buttermilk": {
+        "name": "Spiced Buttermilk",
+        "description": "Neer mor with curry leaves, ginger and a little green chilli – a cooling summer drink.",
+        "imageAlt": "A glass of spiced buttermilk",
+        "placeholder": "Buttermilk glass photo – replace"
+      }
+    }
+  },
+  "how": {
+    "eyebrow": "Subscription",
+    "title": "How doorstep delivery works",
+    "intro": "Four simple steps, and fresh milk turns up every morning.",
+    "cta": "Start my subscription",
+    "steps": {
+      "choose": {
+        "title": "Choose your product",
+        "text": "A2 milk, curd, ghee and more – pick what your family needs."
+      },
+      "plan": {
+        "title": "Pick a plan",
+        "text": "Daily, alternate days or weekly. Change or pause whenever you like."
+      },
+      "delivery": {
+        "title": "Morning doorstep delivery",
+        "text": "Fresh bottles at your door early every delivery morning."
+      },
+      "pay": {
+        "title": "Pay monthly",
+        "text": "One simple bill at the end of the month. No advance needed."
+      }
+    }
+  },
+  "stats": {
+    "title": "Our farm in numbers",
+    "notice": "Sample figures for layout only – not real numbers yet",
+    "items": {
+      "cows": "Cows on our farm",
+      "families": "Happy families",
+      "litres": "Litres every day",
+      "villages": "Villages served"
+    }
+  },
+  "gallery": {
+    "eyebrow": "Life on the farm",
+    "title": "A glimpse of our farm",
+    "intro": "Tap any photo to see it larger.",
+    "open": "Open photo: {name}",
+    "viewer": "Photo viewer",
+    "close": "Close photo viewer",
+    "previous": "Previous photo",
+    "next": "Next photo",
+    "items": {
+      "grazing": {
+        "alt": "Cows grazing in the morning",
+        "placeholder": "Cows grazing – replace"
+      },
+      "calf": {
+        "alt": "Calf with its mother",
+        "placeholder": "Calf with mother – replace"
+      },
+      "shed": {
+        "alt": "Clean cow shed",
+        "placeholder": "Cow shed – replace"
+      },
+      "fodder": {
+        "alt": "Green fodder field",
+        "placeholder": "Fodder field – replace"
+      },
+      "milking": {
+        "alt": "Milking time at the farm",
+        "placeholder": "Milking time – replace"
+      },
+      "bottling": {
+        "alt": "Glass bottles being filled",
+        "placeholder": "Bottling – replace"
+      },
+      "team": {
+        "alt": "Our farm team",
+        "placeholder": "Farm team – replace"
+      },
+      "ghee": {
+        "alt": "Traditional ghee making",
+        "placeholder": "Ghee making – replace"
+      }
+    }
+  },
+  "reviews": {
+    "eyebrow": "Kind words",
+    "title": "What families say",
+    "notice": "Sample reviews for layout only – real customer reviews will replace these",
+    "listLabel": "Customer reviews",
+    "previous": "Previous reviews",
+    "next": "Next reviews",
+    "items": {
+      "r1": {
+        "quote": "[Placeholder review] A real customer's words about the taste of the milk will go here.",
+        "name": "Customer name",
+        "location": "Area"
+      },
+      "r2": {
+        "quote": "[Placeholder review] A real customer's words about morning delivery will go here.",
+        "name": "Customer name",
+        "location": "Area"
+      },
+      "r3": {
+        "quote": "[Placeholder review] A real customer's words about the ghee or curd will go here.",
+        "name": "Customer name",
+        "location": "Area"
+      },
+      "r4": {
+        "quote": "[Placeholder review] A real customer's words about the glass bottles will go here.",
+        "name": "Customer name",
+        "location": "Area"
+      }
+    }
+  },
+  "certs": {
+    "eyebrow": "Trust",
+    "title": "Licences & certifications",
+    "notice": "Placeholders – real certificates will be added",
+    "licenceNo": "Licence no. {number}",
+    "items": {
+      "fssai": "FSSAI",
+      "labReport": "Milk lab test report",
+      "vetCheck": "Veterinary health check",
+      "more": "More certificates"
+    }
+  },
+  "delivery": {
+    "eyebrow": "Delivery areas",
+    "title": "Where we deliver",
+    "intro": "Fresh milk reaches these areas every morning.",
+    "deliveryTime": "Delivery time: {time}",
+    "notice": "Example areas only – delivery areas are not confirmed yet",
+    "checker": {
+      "title": "Check if we deliver to you",
+      "label": "Your 6-digit pincode",
+      "placeholder": "Enter your pincode",
+      "button": "Check",
+      "invalid": "Please enter a valid 6-digit pincode.",
+      "yes": "Good news – we deliver to {area} ({pincode})!",
+      "no": "We don't deliver to {pincode} yet, but we are adding new routes.",
+      "ask": "Ask us on WhatsApp"
+    }
+  },
+  "sample": {
+    "title": "Taste the difference – your first bottle is on us",
+    "text": "Not sure yet? Ask for a free sample bottle. If you love it, start a subscription. If not, no hard feelings.",
+    "terms": "One sample per household, within our delivery areas.",
+    "request": "Request a free sample",
+    "plans": "See subscription plans"
+  },
+  "comingSoon": {
+    "eyebrow": "Coming soon",
+    "title": "{page} – coming soon",
+    "text": "We're still preparing this page. Meanwhile, you can order or ask us anything on WhatsApp.",
+    "back": "Back to home"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "Sorry, we couldn't find that page.",
+    "home": "Go to home page"
+  },
+  "redirect": {
+    "continue": "Continue to the website"
+  }
+}

@@ -2,12 +2,22 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
 import { Container } from "./Container";
 
+/**
+ * Section background "tones". Option A (light-green) is the default;
+ * the `rich:` classes apply only when site.colorTheme = "rich-green" (Option B).
+ */
 const tones = {
-  cream: "bg-cream",
-  light: "bg-cream-50",
-  tile: "bg-athangudi",
-  navy: "bg-navy text-cream",
+  /** plain page background */
+  cream: "bg-cream rich:bg-sage-50",
+  /** soft green section */
+  sage: "bg-sage-50 rich:bg-sage-100",
+  /** Athangudi-tile pattern */
+  tile: "bg-athangudi rich:bg-athangudi-sage",
+  /** strong dark section (stats) */
+  strong: "bg-navy text-cream rich:bg-forest-800",
 } as const;
+
+export type SectionTone = keyof typeof tones;
 
 /** Standard page section: consistent vertical rhythm and background tones. */
 export function Section({
@@ -19,7 +29,7 @@ export function Section({
   children,
 }: {
   id?: string;
-  tone?: keyof typeof tones;
+  tone?: SectionTone;
   className?: string;
   containerClassName?: string;
   /** id of the section heading, for screen readers */

@@ -1,29 +1,41 @@
 import Image from "next/image";
 import Link from "next/link";
-import { site } from "@/data/site";
 import { cn } from "@/lib/cn";
 import { withBasePath } from "@/lib/basePath";
 
-/** Round logo + optional wordmark. */
+/**
+ * Round logo + optional wordmark. The wordmark is the brand name, kept in
+ * English in both languages (lang="en" so Tamil font rules don't apply).
+ */
 export function Logo({
+  href,
+  label,
+  line1,
+  line2,
   size = 52,
   showText = true,
   singleLineName = false,
   className,
   preload = false,
 }: {
+  /** Localised home link, e.g. "/ta/" */
+  href: string;
+  /** Accessible name, e.g. "Sri Chettinadu Kamadhenu Dairy Farm – home" */
+  label: string;
+  line1: string;
+  line2: string;
   size?: number;
   showText?: boolean;
-  /** keep "Sri Chettinadu Kamadhenu" on one line from xl up (header only) */
+  /** keep line 1 on one line from xl up (header only) */
   singleLineName?: boolean;
   className?: string;
   preload?: boolean;
 }) {
   return (
     <Link
-      href="/"
+      href={href}
       className={cn("group flex items-center gap-3", className)}
-      aria-label={`${site.name} – home`}
+      aria-label={label}
     >
       <Image
         src={withBasePath("/images/logo-small.png")}
@@ -35,17 +47,17 @@ export function Logo({
         className="shrink-0 rounded-full shadow-softer ring-1 ring-gold-300"
       />
       {showText && (
-        <span className="flex flex-col leading-tight">
+        <span lang="en" className="flex flex-col leading-tight">
           <span
             className={cn(
               "font-display text-[0.95rem] font-semibold text-navy sm:text-lg",
-              singleLineName && "xl:whitespace-nowrap",
+              singleLineName && "xl:text-base xl:whitespace-nowrap 2xl:text-lg",
             )}
           >
-            Sri Chettinadu Kamadhenu
+            {line1}
           </span>
           <span className="text-[0.65rem] font-bold tracking-[0.22em] text-gold-700 uppercase sm:text-xs">
-            Dairy Farm
+            {line2}
           </span>
         </span>
       )}

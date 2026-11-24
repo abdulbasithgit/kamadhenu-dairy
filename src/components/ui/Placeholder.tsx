@@ -9,14 +9,14 @@ export function Placeholder({
   label,
   className,
 }: {
-  /** e.g. "Farm photo – replace" */
+  /** Translated text, e.g. "Farm photo – replace" */
   label: string;
   className?: string;
 }) {
   return (
     <div
       role="img"
-      aria-label={`Placeholder: ${label}`}
+      aria-label={label}
       className={cn(
         "flex h-full w-full flex-col items-center justify-center gap-2 border border-dashed border-gold-300 bg-cream-200/70 p-4 text-center text-gold-700",
         className,
