@@ -36,17 +36,14 @@ export async function BrandIntro() {
       </FadeIn>
 
       <FadeIn className="order-1 md:order-2" delay={0.1}>
-        <p className="mb-2 flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-gold-700 uppercase ta:text-sm">
+        <p className="mb-2 flex items-center gap-2 text-caption font-semibold tracking-[0.18em] text-gold-700 uppercase ta:text-sm">
           <LeafAccent />
           {t.intro.eyebrow}
         </p>
-        <h2
-          id="intro-title"
-          className="text-3xl leading-tight font-semibold sm:text-4xl ta:text-[1.6rem] ta:sm:text-3xl"
-        >
+        <h2 id="intro-title" className="text-section ta:text-[1.6rem] ta:sm:text-3xl">
           {t.intro.title}
         </h2>
-        <div className="mt-5 space-y-4 text-lg leading-relaxed text-ink-muted ta:text-base">
+        <div className="mt-5 space-y-4 text-body text-ink-muted ta:text-base">
           {t.intro.paragraphs.map((p) => (
             <p key={p}>{p}</p>
           ))}

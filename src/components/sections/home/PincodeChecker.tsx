@@ -37,7 +37,7 @@ export function PincodeChecker() {
 
   return (
     <div className="rounded-lg border border-gold bg-cream-50 p-6 shadow-softer sm:p-8">
-      <h3 className="text-2xl font-semibold ta:text-xl">{c.title}</h3>
+      <h3 className="text-subhead ta:text-xl">{c.title}</h3>
       <form
         onSubmit={onSubmit}
         className="mt-5 flex flex-col gap-3 sm:flex-row"

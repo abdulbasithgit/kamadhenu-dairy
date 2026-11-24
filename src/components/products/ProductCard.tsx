@@ -52,24 +52,22 @@ export function ProductCard({ product }: { product: Product }) {
           <Placeholder label={copy.placeholder} className="border-0 border-b" />
         )}
         {product.isNew && (
-          <span className="absolute top-3 left-3 rounded-full bg-leaf-700 px-3 py-1 text-xs font-bold tracking-wide text-white">
+          <span className="absolute top-3 left-3 rounded-full bg-leaf-700 px-3 py-1 text-caption font-semibold tracking-wide text-white">
             {t.common.new}
           </span>
         )}
       </Link>
 
       <div className="flex flex-1 flex-col p-5">
-        <h3 className="text-xl font-semibold ta:text-lg">
+        <h3 className="font-sans text-product ta:text-lg">
           <Link href={href} className="hover:text-gold-700">
             {copy.name}
           </Link>
         </h3>
-        <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-muted">
-          {copy.description}
-        </p>
+        <p className="mt-2 flex-1 text-body text-ink-muted">{copy.description}</p>
 
         <fieldset className="mt-4">
-          <legend className="mb-2 text-xs font-bold tracking-wider text-navy uppercase">
+          <legend className="mb-2 text-caption font-semibold tracking-wider text-navy uppercase">
             {t.common.size}
           </legend>
           <div className="flex flex-wrap gap-2">

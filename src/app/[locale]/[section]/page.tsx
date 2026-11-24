@@ -47,14 +47,14 @@ export default async function ComingSoonPage({
     <Section tone="tile" className="flex min-h-[60vh] items-center">
       <div className="mx-auto max-w-xl rounded-lg border border-gold bg-cream-50/95 p-1.5 shadow-soft">
         <div className="rounded-md border border-gold-300 px-6 py-12 text-center sm:px-10">
-          <p className="mb-3 flex items-center justify-center gap-2 text-xs font-bold tracking-[0.2em] text-gold-700 uppercase ta:text-sm">
+          <p className="mb-3 flex items-center justify-center gap-2 text-caption font-semibold tracking-[0.18em] text-gold-700 uppercase ta:text-sm">
             <LeafAccent />
             {t.comingSoon.eyebrow}
           </p>
-          <h1 className="text-3xl font-semibold sm:text-4xl ta:text-2xl ta:sm:text-3xl">
+          <h1 className="text-section ta:text-2xl ta:sm:text-3xl">
             {format(t.comingSoon.title, { page: t.nav[page.key] })}
           </h1>
-          <p className="mt-4 leading-relaxed text-ink-muted">{t.comingSoon.text}</p>
+          <p className="mt-4 text-body text-ink-muted">{t.comingSoon.text}</p>
           <KolamDivider className="my-6" />
           <div className="flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
             <ButtonLink

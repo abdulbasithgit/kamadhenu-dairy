@@ -1,14 +1,22 @@
-import { Mulish, Noto_Sans_Tamil, Playfair_Display } from "next/font/google";
+import { DM_Sans, Fraunces, Noto_Sans_Tamil } from "next/font/google";
 
-const playfair = Playfair_Display({
+/**
+ * Brand typography
+ * - Fraunces: headings (variable; SOFT axis gives the rounded, friendly "organic" feel)
+ * - DM Sans:  body, navigation, buttons, forms, product info, labels
+ * - Noto Sans Tamil: all Tamil text (Fraunces / DM Sans have no Tamil letters)
+ */
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  variable: "--font-fraunces",
+  axes: ["SOFT", "opsz"],
   display: "swap",
 });
 
-const mulish = Mulish({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-mulish",
+  variable: "--font-dm-sans",
+  axes: ["opsz"],
   display: "swap",
 });
 
@@ -21,4 +29,4 @@ const notoTamil = Noto_Sans_Tamil({
 });
 
 /** Put on <html> so the CSS font variables are available everywhere. */
-export const fontVariables = `${playfair.variable} ${mulish.variable} ${notoTamil.variable}`;
+export const fontVariables = `${fraunces.variable} ${dmSans.variable} ${notoTamil.variable}`;

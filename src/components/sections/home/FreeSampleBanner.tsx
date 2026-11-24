@@ -24,11 +24,11 @@ export async function FreeSampleBanner() {
             </span>
             <h2
               id="sample-title"
-              className="relative mx-auto max-w-2xl text-3xl font-semibold text-cream sm:text-4xl ta:text-[1.6rem] ta:sm:text-3xl"
+              className="relative mx-auto max-w-2xl text-section text-cream ta:text-[1.6rem] ta:sm:text-3xl"
             >
               {t.sample.title}
             </h2>
-            <p className="relative mx-auto mt-4 max-w-xl text-lg leading-relaxed text-cream/85 ta:text-base">
+            <p className="relative mx-auto mt-4 max-w-xl text-lead text-cream/85 ta:text-base">
               {t.sample.text}
             </p>
             <div className="relative mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">

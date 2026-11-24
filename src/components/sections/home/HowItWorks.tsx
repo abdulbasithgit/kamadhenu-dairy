@@ -36,7 +36,7 @@ export async function HowItWorks() {
                     {i + 1}
                   </span>
                 </span>
-                <h3 className="mt-5 text-xl font-semibold ta:text-lg">{copy.title}</h3>
+                <h3 className="mt-5 text-card ta:text-lg">{copy.title}</h3>
                 <p className="mx-auto mt-2 max-w-60 leading-relaxed text-ink-muted ta:text-[0.95rem]">
                   {copy.text}
                 </p>

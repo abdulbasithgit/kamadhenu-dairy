@@ -51,7 +51,7 @@ export function Logo({
           <span
             className={cn(
               "font-display text-[0.95rem] font-semibold text-navy sm:text-lg",
-              singleLineName && "xl:text-base xl:whitespace-nowrap 2xl:text-lg",
+              singleLineName && "xl:text-[0.9375rem] xl:whitespace-nowrap 2xl:text-lg",
             )}
           >
             {line1}

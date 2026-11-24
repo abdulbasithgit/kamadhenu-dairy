@@ -26,7 +26,7 @@ export async function OurPromise() {
                   <span className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border border-gold bg-sage-50 text-leaf-700 ring-4 ring-sage-100">
                     <Icon size={30} />
                   </span>
-                  <h3 className="text-xl font-semibold ta:text-lg">{copy.title}</h3>
+                  <h3 className="text-card ta:text-lg">{copy.title}</h3>
                   <p className="mt-2 leading-relaxed text-ink-muted ta:text-[0.95rem]">
                     {copy.text}
                   </p>

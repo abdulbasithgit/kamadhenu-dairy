@@ -27,7 +27,7 @@ export async function OurEthos() {
                     <span className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-navy text-gold-300 rich:bg-forest-800">
                       <Icon size={28} />
                     </span>
-                    <h3 className="text-2xl font-semibold ta:text-xl">{copy.title}</h3>
+                    <h3 className="text-subhead ta:text-xl">{copy.title}</h3>
                     <span aria-hidden="true" className="my-3 h-px w-12 bg-leaf" />
                     <p className="leading-relaxed text-ink-muted ta:text-[0.95rem]">
                       {copy.text}

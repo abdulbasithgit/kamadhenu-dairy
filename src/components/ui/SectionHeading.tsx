@@ -32,7 +32,7 @@ export function SectionHeading({
       {eyebrow && (
         <p
           className={cn(
-            "mb-2 flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase ta:text-sm",
+            "mb-2 flex items-center gap-2 text-caption font-semibold tracking-[0.18em] uppercase ta:text-sm",
             align === "center" && "justify-center",
             onDark ? "text-gold-300" : "text-gold-700",
           )}
@@ -44,19 +44,14 @@ export function SectionHeading({
       <Tag
         id={id}
         className={cn(
-          "text-3xl leading-tight font-semibold sm:text-4xl ta:text-[1.6rem] ta:sm:text-3xl",
+          "text-section ta:text-[1.6rem] ta:sm:text-3xl",
           onDark && "text-cream",
         )}
       >
         {title}
       </Tag>
       {intro && (
-        <p
-          className={cn(
-            "mt-4 text-base leading-relaxed",
-            onDark ? "text-cream/85" : "text-ink-muted",
-          )}
-        >
+        <p className={cn("mt-4 text-body", onDark ? "text-cream/85" : "text-ink-muted")}>
           {intro}
         </p>
       )}

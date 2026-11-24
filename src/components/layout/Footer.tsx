@@ -31,9 +31,7 @@ const socialIcons: Record<
 };
 
 function FooterHeading({ children }: { children: string }) {
-  return (
-    <h2 className="mb-4 font-display text-lg font-semibold text-gold-300">{children}</h2>
-  );
+  return <h2 className="mb-4 text-card text-gold-300">{children}</h2>;
 }
 
 const linkClass =
@@ -104,7 +102,7 @@ export async function Footer() {
         {/* Quick links */}
         <nav aria-label={t.footer.quickLinks}>
           <FooterHeading>{t.footer.quickLinks}</FooterHeading>
-          <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm sm:grid-cols-1">
+          <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-nav sm:grid-cols-1">
             {[...mainNav, ...footerExtraNav].map((item) => (
               <li key={item.key}>
                 <Link
@@ -121,7 +119,7 @@ export async function Footer() {
         {/* Contact – every line is hidden until its value is filled in site.ts */}
         <div>
           <FooterHeading>{t.footer.getInTouch}</FooterHeading>
-          <address className="space-y-3 text-sm not-italic">
+          <address className="space-y-3 text-[0.9375rem] leading-relaxed not-italic">
             {addressLines.length > 0 && (
               <p className="flex gap-3">
                 <MapPinIcon size={18} className="mt-0.5 shrink-0 text-gold" />

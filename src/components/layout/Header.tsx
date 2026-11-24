@@ -91,7 +91,7 @@ export function Header() {
                       href={localizedHref(locale, item.href)}
                       aria-current={active ? "page" : undefined}
                       className={cn(
-                        "relative block rounded-md px-2 py-2 text-[0.95rem] font-semibold whitespace-nowrap text-navy transition-colors hover:text-gold-700 2xl:px-3",
+                        "relative block rounded-md px-2 py-2 text-nav whitespace-nowrap text-navy transition-colors hover:text-gold-700 2xl:px-3",
                         "after:absolute after:inset-x-2 after:-bottom-0.5 after:h-0.5 after:origin-center after:scale-x-0 after:bg-gold after:transition-transform 2xl:after:inset-x-3",
                         active ? "after:scale-x-100" : "hover:after:scale-x-100",
                       )}
@@ -191,7 +191,7 @@ export function Header() {
                       onClick={closeMenu}
                       aria-current={active ? "page" : undefined}
                       className={cn(
-                        "block rounded-lg border-l-2 px-4 py-3 font-display text-lg text-navy transition-colors ta:font-tamil ta:text-base",
+                        "block rounded-lg border-l-2 px-4 py-3 text-lg font-medium text-navy transition-colors ta:text-base",
                         active
                           ? "border-gold bg-gold-100 font-semibold"
                           : "border-transparent hover:border-gold-300 hover:bg-cream-50",

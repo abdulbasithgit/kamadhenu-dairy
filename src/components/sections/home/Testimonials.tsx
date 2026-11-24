@@ -69,7 +69,7 @@ export function Testimonials() {
                 </div>
                 <blockquote
                   className={cn(
-                    "mt-4 flex-1 text-lg leading-relaxed ta:text-base",
+                    "mt-4 flex-1 text-lead ta:text-base",
                     review.placeholder
                       ? "text-ink-muted italic ta:not-italic"
                       : "text-ink",

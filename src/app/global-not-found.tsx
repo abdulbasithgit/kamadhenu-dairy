@@ -28,11 +28,11 @@ export default function GlobalNotFound() {
       <body className="flex min-h-full items-center justify-center bg-athangudi p-4 font-sans rich:bg-athangudi-sage">
         <main className="w-full max-w-lg rounded-lg border border-gold bg-cream-50 p-1.5 shadow-soft">
           <div className="rounded-md border border-gold-300 px-6 py-10 text-center">
-            <p className="font-display text-6xl font-semibold text-gold-700">404</p>
-            <h1 className="mt-3 text-3xl font-semibold">{en.notFound.title}</h1>
+            <p className="font-display text-hero text-gold-700">404</p>
+            <h1 className="mt-3 text-section">{en.notFound.title}</h1>
             <p className="mt-2 text-ink-muted">{en.notFound.text}</p>
             <div lang="ta" className="mt-5">
-              <h2 className="text-2xl font-semibold">{ta.notFound.title}</h2>
+              <h2 className="text-subhead">{ta.notFound.title}</h2>
               <p className="mt-1 text-ink-muted">{ta.notFound.text}</p>
             </div>
             <KolamDivider className="my-6" />

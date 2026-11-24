@@ -90,13 +90,13 @@ export function HeroCarousel() {
                 )}
               >
                 <div>
-                  <p className="mb-3 text-xs font-bold tracking-[0.2em] text-gold-700 uppercase rich:text-gold-300 ta:text-sm">
+                  <p className="mb-3 text-caption font-semibold tracking-[0.18em] text-gold-700 uppercase rich:text-gold-300 ta:text-sm">
                     {copy.eyebrow}
                   </p>
-                  <h2 className="text-[2.1rem] leading-[1.15] font-semibold sm:text-5xl lg:text-[3.4rem] rich:text-cream ta:text-[1.65rem] ta:sm:text-4xl ta:lg:text-[2.5rem]">
+                  <h2 className="text-hero rich:text-cream ta:text-[1.65rem] ta:font-semibold ta:sm:text-4xl ta:lg:text-[2.5rem]">
                     {copy.headline}
                   </h2>
-                  <p className="mt-5 max-w-prose text-lg leading-relaxed text-ink-muted rich:text-cream/85 ta:text-base ta:sm:text-lg">
+                  <p className="mt-5 max-w-prose text-lead text-ink-muted rich:text-cream/85 ta:text-base ta:sm:text-lg">
                     {copy.subtext}
                   </p>
                   <div className="mt-8 flex flex-col gap-3 min-[420px]:flex-row min-[420px]:flex-wrap">
