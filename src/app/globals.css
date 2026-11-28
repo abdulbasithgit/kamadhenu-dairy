@@ -69,6 +69,11 @@
   --text-hero--line-height: 1.08;
   --text-hero--letter-spacing: -0.02em;
   --text-hero--font-weight: 700;
+  /* Fraunces – inner-page titles (PageHero) 36 → 48px, 700 */
+  --text-page: clamp(2.25rem, 1.957rem + 1.304vw, 3rem);
+  --text-page--line-height: 1.1;
+  --text-page--letter-spacing: -0.02em;
+  --text-page--font-weight: 700;
   /* Fraunces – section headings 32 → 40px, 600 */
   --text-section: clamp(2rem, 1.804rem + 0.87vw, 2.5rem);
   --text-section--line-height: 1.15;

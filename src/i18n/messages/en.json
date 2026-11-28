@@ -354,6 +354,96 @@
     "request": "Request a free sample",
     "plans": "See subscription plans"
   },
+  "about": {
+    "meta": {
+      "title": "About us",
+      "description": "Meet the family farm behind Sri Chettinadu Kamadhenu Dairy Farm – native cows, fresh A2 milk and old Chettinad ways of caring for cattle."
+    },
+    "hero": {
+      "eyebrow": "About us",
+      "title": "Rooted in Chettinad, raised with care",
+      "lead": "We're a small family dairy farm. Here's who we are, why we keep native cows, and what we promise every family we deliver to.",
+      "imagePlaceholder": "Farm photo – replace",
+      "imageAlt": "Our farm in Chettinad"
+    },
+    "story": {
+      "eyebrow": "Our story",
+      "title": "How it all began",
+      "since": "Caring for cows since {year}",
+      "placeholderNotice": "Placeholder – the family's real story will go here",
+      "paragraphs": [
+        "TODO – How the farm started: when, where and why the family began keeping cows.",
+        "TODO – The family behind the farm: who looks after the cows today, and what was passed down to them.",
+        "TODO – What the farm is like today, and what the family hopes for its future."
+      ],
+      "imagePlaceholder": "Family at the farm – replace",
+      "imageAlt": "The family behind the farm"
+    },
+    "mission": {
+      "eyebrow": "What drives us",
+      "title": "Our mission and vision",
+      "items": {
+        "mission": {
+          "title": "Our mission",
+          "text": "To bring fresh, honest milk from native cows to families in Chettinad every morning – nothing added, nothing taken away."
+        },
+        "vision": {
+          "title": "Our vision",
+          "text": "A future where every home around us can get its milk from a farm it knows and trusts, and where native cattle and traditional dairy skills keep thriving."
+        }
+      }
+    },
+    "a2": {
+      "eyebrow": "Why A2 & native cows",
+      "title": "A2 milk, explained simply",
+      "intro": "No jargon and no tall claims – just what A2 means and why we chose native cows.",
+      "items": {
+        "whatIs": {
+          "title": "What does “A2” mean?",
+          "text": "Cow's milk contains a protein called beta-casein, which comes in two common types: A1 and A2. Native Indian breeds are known to carry mostly the A2 type, so their milk is called A2 milk. That's all the name means."
+        },
+        "nativeCows": {
+          "title": "Why native cows?",
+          "text": "Native breeds are at home in our hot Chettinad weather and have been part of Tamil village life for generations. Raising them helps keep these breeds – and the know-how around them – alive."
+        },
+        "honest": {
+          "title": "What we don't claim",
+          "text": "We won't tell you A2 milk is a cure or a medicine – research on A1 and A2 milk is still going on. What we can promise is fresh milk from well-cared-for cows. For any health question, please ask your doctor."
+        }
+      }
+    },
+    "timeline": {
+      "eyebrow": "Our journey",
+      "title": "Milestones along the way",
+      "items": {
+        "start": {
+          "title": "TODO – The farm begins",
+          "text": "TODO – One or two lines about how it started."
+        },
+        "firstDelivery": {
+          "title": "TODO – First doorstep deliveries",
+          "text": "TODO – When milk first went out to families."
+        },
+        "today": {
+          "title": "TODO – Today",
+          "text": "TODO – Where the farm is now."
+        }
+      }
+    },
+    "team": {
+      "eyebrow": "The people",
+      "title": "Meet the family behind the farm",
+      "role": "Owner",
+      "namePlaceholder": "Name to be added",
+      "photoPlaceholder": "Owner photo – replace",
+      "photoAlt": "{name}, owner of Sri Chettinadu Kamadhenu Dairy Farm",
+      "message": "Placeholder – a short message from the owner will go here."
+    },
+    "cta": {
+      "title": "Come taste the difference",
+      "text": "Start with a free sample bottle, or set up a subscription and get fresh milk at your door every morning."
+    }
+  },
   "comingSoon": {
     "eyebrow": "Coming soon",
     "title": "{page} – coming soon",

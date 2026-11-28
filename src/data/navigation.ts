@@ -25,7 +25,6 @@ export const footerExtraNav: NavItem[] = [{ key: "faq", href: "/faq" }];
  * Remove an entry when its real page is built (e.g. "products" in Phase 3).
  */
 export const comingSoonPages: { slug: string; key: keyof Dictionary["nav"] }[] = [
-  { slug: "about", key: "about" },
   { slug: "products", key: "products" },
   { slug: "our-farm", key: "farm" },
   { slug: "subscribe", key: "subscribe" },
