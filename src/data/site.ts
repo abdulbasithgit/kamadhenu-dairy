@@ -42,8 +42,16 @@ export interface SiteConfig {
   /** Brand name – kept in English in both languages */
   name: string;
   shortName: string;
-  /** Live site address, no trailing slash. Used for SEO / Open Graph. */
+  /**
+   * Live site address including any sub-path, no trailing slash.
+   * Every canonical link, Open Graph URL, hreflang link and the sitemap use it.
+   */
   url: string;
+  /**
+   * Main town you serve, used in copy such as "homes in and around {area}".
+   * Keep it in line with deliveryAreas below.
+   */
+  serviceArea: { en: string; ta: string };
 
   ownerName: string;
   foundedYear: number | null;
@@ -108,8 +116,9 @@ export const site: SiteConfig = {
 
   name: "Sri Chettinadu Kamadhenu Dairy Farm",
   shortName: "Kamadhenu Dairy",
-  // TODO: your real domain once bought
-  url: "https://www.example.com",
+  // Preview address for now. TODO at launch: your real domain, e.g. "https://www.example.in"
+  url: "https://abdulbasithgit.github.io/kamadhenu-dairy",
+  serviceArea: { en: "Karaikudi", ta: "காரைக்குடி" },
 
   // TODO
   ownerName: "",

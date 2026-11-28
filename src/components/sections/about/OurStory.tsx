@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { FadeIn } from "@/components/motion/FadeIn";
-import { PlaceholderNotice } from "@/components/ui/PlaceholderNotice";
 import { Placeholder } from "@/components/ui/Placeholder";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -12,15 +11,14 @@ import { withBasePath } from "@/lib/basePath";
 
 /**
  * How the farm started and the family behind it.
- * The text is a TODO placeholder until the family writes their story
- * (about.story in the JSON files) – then set `storyIsPlaceholder` to false.
+ * Text: about.story.paragraphs in the JSON files. While that list is empty,
+ * one tidy "Our story is coming soon" line is shown instead.
  * The founding year appears only when site.foundedYear is set.
  */
-const storyIsPlaceholder = true;
-
 export async function OurStory() {
   const { t } = await getI18n();
   const copy = t.about.story;
+  const paragraphs: string[] = copy.paragraphs;
   return (
     <Section
       labelledBy="story-title"
@@ -38,23 +36,16 @@ export async function OurStory() {
             {format(copy.since, { year: site.foundedYear })}
           </p>
         )}
-        {storyIsPlaceholder ? (
-          <div className="mt-6 rounded-lg border-2 border-dashed border-gold-300 p-4 sm:p-5">
-            <PlaceholderNotice className="mx-0 mb-4 max-w-none">
-              {copy.placeholderNotice}
-            </PlaceholderNotice>
-            <div className="space-y-3 text-body text-ink-muted ta:text-base">
-              {copy.paragraphs.map((p) => (
-                <p key={p}>{p}</p>
-              ))}
-            </div>
-          </div>
-        ) : (
+        {paragraphs.length > 0 ? (
           <div className="mt-6 space-y-4 text-body text-ink-muted ta:text-base">
-            {copy.paragraphs.map((p) => (
+            {paragraphs.map((p) => (
               <p key={p}>{p}</p>
             ))}
           </div>
+        ) : (
+          <p className="mt-6 border-l-2 border-gold pl-4 text-lead text-ink-muted italic ta:text-base ta:not-italic">
+            {copy.comingSoon}
+          </p>
         )}
       </FadeIn>
 

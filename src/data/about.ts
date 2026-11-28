@@ -41,10 +41,9 @@ export interface TimelineItem {
 
 /**
  * Farm milestones. The whole timeline section is HIDDEN while this list is empty.
- * TODO: add real milestones only, e.g.
- *   { id: "start", year: null },
- *   { id: "firstDelivery", year: null },
- *   { id: "today", year: null },
- * and write their text in about.timeline.items (en.json + ta.json).
+ * TODO: add real milestones only. For each one:
+ *   1. add its text to about.timeline.items in en.json AND ta.json, e.g.
+ *      "start": { "title": "The farm begins", "text": "…" }
+ *   2. add it here: { id: "start", year: 1990 }  (year: null if unsure)
  */
 export const timeline: TimelineItem[] = [];

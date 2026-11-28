@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Sri Chettinadu Kamadhenu Dairy Farm | Fresh A2 Milk in Chettinad",
-    "description": "Fresh A2 milk from native cows, delivered in glass bottles to your doorstep in the Chettinad region of Tamil Nadu."
+    "description": "Fresh A2 milk from native cows, delivered in glass bottles to your doorstep in and around {area}, Tamil Nadu."
   },
   "brand": {
     "line1": "Sri Chettinadu Kamadhenu",
@@ -370,12 +370,8 @@
       "eyebrow": "Our story",
       "title": "How it all began",
       "since": "Caring for cows since {year}",
-      "placeholderNotice": "Placeholder – the family's real story will go here",
-      "paragraphs": [
-        "TODO – How the farm started: when, where and why the family began keeping cows.",
-        "TODO – The family behind the farm: who looks after the cows today, and what was passed down to them.",
-        "TODO – What the farm is like today, and what the family hopes for its future."
-      ],
+      "comingSoon": "Our story is coming soon.",
+      "paragraphs": [],
       "imagePlaceholder": "Family at the farm – replace",
       "imageAlt": "The family behind the farm"
     },
@@ -385,11 +381,11 @@
       "items": {
         "mission": {
           "title": "Our mission",
-          "text": "To bring fresh, honest milk from native cows to families in Chettinad every morning – nothing added, nothing taken away."
+          "text": "To bring fresh, honest milk from native cows to families in and around {area} every morning – nothing added, nothing taken away."
         },
         "vision": {
           "title": "Our vision",
-          "text": "A future where every home around us can get its milk from a farm it knows and trusts, and where native cattle and traditional dairy skills keep thriving."
+          "text": "A future where homes in and around {area} can get their milk from a farm they know and trust, and where native cattle and traditional dairy skills keep thriving."
         }
       }
     },
@@ -415,20 +411,7 @@
     "timeline": {
       "eyebrow": "Our journey",
       "title": "Milestones along the way",
-      "items": {
-        "start": {
-          "title": "TODO – The farm begins",
-          "text": "TODO – One or two lines about how it started."
-        },
-        "firstDelivery": {
-          "title": "TODO – First doorstep deliveries",
-          "text": "TODO – When milk first went out to families."
-        },
-        "today": {
-          "title": "TODO – Today",
-          "text": "TODO – Where the farm is now."
-        }
-      }
+      "items": {}
     },
     "team": {
       "eyebrow": "The people",
@@ -437,7 +420,7 @@
       "namePlaceholder": "Name to be added",
       "photoPlaceholder": "Owner photo – replace",
       "photoAlt": "{name}, owner of Sri Chettinadu Kamadhenu Dairy Farm",
-      "message": "Placeholder – a short message from the owner will go here."
+      "message": ""
     },
     "cta": {
       "title": "Come taste the difference",

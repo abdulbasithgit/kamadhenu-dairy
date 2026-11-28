@@ -3,11 +3,13 @@ import { FadeIn } from "@/components/motion/FadeIn";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { missionVision } from "@/data/about";
+import { site } from "@/data/site";
+import { format } from "@/i18n/format";
 import { getI18n } from "@/i18n/server";
 
 /** Two short cards: mission and vision. */
 export async function MissionVision() {
-  const { t } = await getI18n();
+  const { locale, t } = await getI18n();
   const copy = t.about.mission;
   return (
     <Section tone="sage" labelledBy="mission-title">
@@ -26,7 +28,9 @@ export async function MissionVision() {
                     </span>
                     <h3 className="text-subhead ta:text-xl">{text.title}</h3>
                     <span aria-hidden="true" className="my-3 block h-px w-12 bg-leaf" />
-                    <p className="text-body text-ink-muted ta:text-base">{text.text}</p>
+                    <p className="text-body text-ink-muted ta:text-base">
+                      {format(text.text, { area: site.serviceArea[locale] })}
+                    </p>
                   </div>
                 </div>
               </FadeIn>

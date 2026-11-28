@@ -5,13 +5,16 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "node scripts/check-content.mjs",
     "lint": "eslint",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "tsc --noEmit",
     "build:pages": "NEXT_PUBLIC_BASE_PATH=/kamadhenu-dairy next build",
+    "postbuild:pages": "node scripts/check-content.mjs",
     "serve": "npx --yes serve@14 out",
-    "i18n:review": "node scripts/tamil-review.mjs && prettier --write README.md"
+    "i18n:review": "node scripts/tamil-review.mjs && prettier --write README.md",
+    "check:content": "node scripts/check-content.mjs"
   },
   "dependencies": {
     "framer-motion": "^14.14.0",

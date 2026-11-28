@@ -12,12 +12,15 @@ export async function Timeline() {
   if (timeline.length === 0) return null;
   const { t } = await getI18n();
   const copy = t.about.timeline;
+  // Widened so the component still type-checks while the items list is empty
+  const items: Record<string, { title: string; text: string } | undefined> = copy.items;
   return (
     <Section tone="sage" labelledBy="timeline-title">
       <SectionHeading id="timeline-title" eyebrow={copy.eyebrow} title={copy.title} />
       <ol className="relative mx-auto mt-10 max-w-2xl border-l-2 border-gold-300 pl-8">
         {timeline.map((item, i) => {
-          const text = copy.items[item.id];
+          const text = items[item.id];
+          if (!text) return null;
           return (
             <li key={item.id} className="relative pb-8 last:pb-0">
               <span

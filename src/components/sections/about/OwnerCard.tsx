@@ -12,8 +12,8 @@ import { isSet } from "@/lib/contact";
 
 /**
  * Owner card. Name comes from site.ownerName; until it's set a dashed
- * "name to be added" label is shown. The message is a placeholder
- * (about.team.message) until the owner writes one.
+ * "name to be added" label is shown. The owner's message (about.team.message)
+ * is hidden while it's empty.
  */
 export async function OwnerCard() {
   const { t } = await getI18n();
@@ -54,10 +54,14 @@ export async function OwnerCard() {
             <p className="mt-1 text-caption font-semibold tracking-[0.12em] text-leaf-700 uppercase">
               {copy.role}
             </p>
-            <span aria-hidden="true" className="my-4 h-px w-12 bg-gold" />
-            <p className="rounded-md border border-dashed border-gold-300 px-4 py-3 text-body text-ink-muted italic ta:text-base ta:not-italic">
-              {copy.message}
-            </p>
+            {copy.message && (
+              <>
+                <span aria-hidden="true" className="my-4 h-px w-12 bg-gold" />
+                <p className="text-body text-ink-muted italic ta:text-base ta:not-italic">
+                  {copy.message}
+                </p>
+              </>
+            )}
           </div>
         </article>
       </FadeIn>

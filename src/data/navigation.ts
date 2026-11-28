@@ -32,3 +32,9 @@ export const comingSoonPages: { slug: string; key: keyof Dictionary["nav"] }[] =
   { slug: "contact", key: "contact" },
   { slug: "faq", key: "faq" },
 ];
+
+/** Paths of pages that really exist (menu + footer pages that aren't "coming soon") */
+export function builtPages(): string[] {
+  const soon = new Set(comingSoonPages.map((p) => `/${p.slug}`));
+  return [...mainNav, ...footerExtraNav].map((n) => n.href).filter((h) => !soon.has(h));
+}

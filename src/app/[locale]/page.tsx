@@ -11,6 +11,26 @@ import { OurPromise } from "@/components/sections/home/OurPromise";
 import { Stats } from "@/components/sections/home/Stats";
 import { Testimonials } from "@/components/sections/home/Testimonials";
 import { KolamDivider } from "@/components/ui/KolamDivider";
+import { site } from "@/data/site";
+import { isLocale } from "@/i18n/config";
+import { getDictionary } from "@/i18n/dictionary";
+import { format } from "@/i18n/format";
+import { pageMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: PageProps<"/[locale]">): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isLocale(locale)) return {};
+  const t = getDictionary(locale);
+  return pageMetadata({
+    locale,
+    path: "/",
+    title: t.meta.title,
+    description: format(t.meta.description, { area: site.serviceArea[locale] }),
+  });
+}
 
 export default function HomePage() {
   return (

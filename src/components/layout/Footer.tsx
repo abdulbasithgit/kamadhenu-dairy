@@ -72,7 +72,7 @@ export async function Footer() {
             />
           </div>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream/85">
-            {t.meta.description}
+            {format(t.meta.description, { area: site.serviceArea[locale] })}
           </p>
           <p className="mt-3 text-sm font-semibold tracking-wide text-gold-300">
             {t.common.tagline}

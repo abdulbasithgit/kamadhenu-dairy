@@ -7,7 +7,9 @@ import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
 import { site } from "@/data/site";
 import { isLocale, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionary";
+import { format } from "@/i18n/format";
 import { I18nProvider } from "@/i18n/I18nProvider";
+import { pageTitle } from "@/lib/seo";
 import { fontVariables } from "../fonts";
 import "../globals.css";
 
@@ -26,13 +28,11 @@ export async function generateMetadata({
   const t = getDictionary(locale);
   return {
     metadataBase: new URL(site.url),
-    title: { default: t.meta.title, template: `%s | ${site.shortName}` },
-    description: t.meta.description,
+    title: { default: t.meta.title, template: pageTitle("%s") },
+    description: format(t.meta.description, { area: site.serviceArea[locale] }),
     // Keep search engines out while this is a review/preview build
     robots: site.previewMode ? { index: false, follow: false } : undefined,
-    alternates: site.previewMode
-      ? undefined
-      : { languages: { en: "/en/", ta: "/ta/", "x-default": "/en/" } },
+    // Canonical, hreflang and Open Graph are set per page (src/lib/seo.ts)
   };
 }
 

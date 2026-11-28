@@ -10,6 +10,7 @@ import { isLocale, localizedHref } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionary";
 import { format } from "@/i18n/format";
 import { whatsappHref } from "@/lib/contact";
+import { pageMetadata, pageTitle } from "@/lib/seo";
 
 /**
  * Translated "Coming soon" page for every menu page that isn't built yet
@@ -32,7 +33,13 @@ export async function generateMetadata({
   const { locale, section } = await params;
   const page = findPage(section);
   if (!isLocale(locale) || !page) return {};
-  return { title: getDictionary(locale).nav[page.key] };
+  const t = getDictionary(locale);
+  return pageMetadata({
+    locale,
+    path: `/${page.slug}`,
+    title: pageTitle(t.nav[page.key]),
+    description: t.comingSoon.text,
+  });
 }
 
 export default async function ComingSoonPage({

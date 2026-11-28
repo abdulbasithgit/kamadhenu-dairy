@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { site } from "@/data/site";
+import { absoluteUrl } from "@/lib/seo";
 import { fontVariables } from "../fonts";
 import "../globals.css";
 
 export const metadata: Metadata = {
   title: site.name,
   robots: site.previewMode ? { index: false, follow: false } : undefined,
+  // "/" only redirects – point search engines at the English home page
+  alternates: { canonical: absoluteUrl("/en/") },
 };
 
 /** Minimal root layout for "/" – it only forwards visitors to /en/ or /ta/. */

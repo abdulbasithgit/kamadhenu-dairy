@@ -9,9 +9,9 @@ import { OurEthos } from "@/components/sections/home/OurEthos";
 import { CtaBand } from "@/components/ui/CtaBand";
 import { PageHero } from "@/components/ui/PageHero";
 import { aboutHeroImage } from "@/data/about";
-import { site } from "@/data/site";
-import { isLocale, localizedHref } from "@/i18n/config";
+import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionary";
+import { pageMetadata, pageTitle } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -19,29 +19,12 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   const t = getDictionary(locale);
-  const { title, description } = t.about.meta;
-  return {
-    title,
-    description,
-    alternates: site.previewMode
-      ? undefined
-      : {
-          canonical: localizedHref(locale, "/about"),
-          languages: {
-            en: localizedHref("en", "/about"),
-            ta: localizedHref("ta", "/about"),
-            "x-default": localizedHref("en", "/about"),
-          },
-        },
-    openGraph: {
-      title: `${title} | ${site.name}`,
-      description,
-      type: "website",
-      locale: locale === "ta" ? "ta_IN" : "en_IN",
-      siteName: site.name,
-      url: localizedHref(locale, "/about"),
-    },
-  };
+  return pageMetadata({
+    locale,
+    path: "/about",
+    title: pageTitle(t.about.meta.title),
+    description: t.about.meta.description,
+  });
 }
 
 export default async function AboutPage({ params }: PageProps<"/[locale]/about">) {
